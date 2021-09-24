@@ -1,0 +1,93 @@
+Files provide long-term retention of typically large amounts of data
+
+9.1 Introduction
+
+
+
+
+9.2 Files
+*******************************************************
+***************Creating text file********************** 
+*******************************************************
+files are created as objects 
+
+sys.stdin—the standard input file object
+sys.stdout—the standard output file object
+sys.stderr—the standard error file object.
+
+
+
+9.3 Text-File Processing
+****************************************************************
+*****Writing to a Text File: Introducing the with Statement*****
+****************************************************************
+ex.1
+In [1]: with open('accounts.txt', mode='w')   as accounts:
+   ...:     accounts.write('100 Jones   24.98\n')
+   ...:     accounts.write('200 Doe   345.67\n')
+
+ex.2
+print('100 Jones 24.98', file=accounts)
+
+
+
+*********************************************
+	9.3.2 Reading Data from a Text File
+*********************************************
+
+In [1]: with open('accounts.txt', mode='r')   as accounts:
+   ...:     print(f'{"Account":<10}{"Name":<10}{"Balance":>10}')
+   ...:     for record in accounts:
+   ...:         account, name, balance = record.split()
+   ...:         print(f'{account:<10}{name:<10}{balance:>10}')
+   ...:        
+Account   Name         Balance
+100       Jones          24.98
+200       Doe           345.67
+
+
+
+Seeking to a Specific File Position
+
+
+9.3.2 Reading Data from a Text File
+
+9.4 Updating Text Files
+
+9.5 Serialization with JSON
+
+9.6 Focus on Security: pickle Serialization and Deserialization
+
+9.7 Additional Notes Regarding Files
+
+9.8 Handling Exceptions
+
+9.8.1 Division by Zero and Invalid Input
+
+9.8.2 try Statements
+
+9.8.3 Catching Multiple Exceptions in One except Clause
+
+9.8.4 What Exceptions Does a Function or Method Raise?
+
+9.8.5 What Code Should Be Placed in a try Suite?
+
+9.9 finally Clause
+
+9.10 Explicitly Raising an Exception
+
+9.11 (Optional) Stack Unwinding and Tracebacks
+
+9.12 Intro to Data Science: Working with CSV Files
+
+9.12.1 Python Standard Library Module csv
+
+9.12.2 Reading CSV Files into Pandas DataFrames
+
+9.12.3 Reading the Titanic Disaster Dataset
+
+9.12.4 Simple Data Analysis with the Titanic Disaster Dataset
+
+9.12.5 Passenger Age Histogram
+
+9.13 Wrap-Up

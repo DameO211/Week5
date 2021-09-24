@@ -1,0 +1,44 @@
+Graded Discussion: Bandit Vulnerability Detection
+ 
+Python is a popular programming language and has been labeled as having a safe core. However; specific code implementation can lead to risky and vulnerable applications. Bandit is a tool that can be used to check existing code for possible vulnerabilities.
+
+For example, the following code (albeit maybe not that useful) has a potential concern as the exception is not logged. Instead we just continue.
+
+print ('Hello from Python 3')
+
+count=0
+while count<5:
+    try:
+        count+=1
+        print(str(count))
+    except Exception:
+        continue
+
+If you run bandit on the directory on this code, you will receive this message:
+
+Test results:
+>> Issue: [B112:try_except_continue] Try, Except, Continue detected.
+Severity: Low Confidence: High
+...
+
+You can install bandit using this syntax at the command prompt:
+
+pip install bandit
+
+You can run bandit using this syntax at the shell:
+
+bandit -r path/to/file/
+
+where path/to/file/ is the location of your files.
+
+For this exercise, place your python code from the previous labs from this class into a folder of your choice and run the bandit analysis.
+
+For example, if I placed my python files in c:/users/jim/SDEVFiles, I would use the following to run bandit and output the results to a filenamed myVulns.txt
+
+bandit -r C:/Users/jim/SDEVFiles > myVulns.txt
+
+You can then open myVulns.txt to reveal possible issues.
+
+Share your output with the class and pick one vulnerability and research how you could fix it. If you don't have any vulnerabilities, look at another student's submitted file and provide some insights into the findings.
+
+Discuss the findings with at least one other student providing additional insight and analysis.

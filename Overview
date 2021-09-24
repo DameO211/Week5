@@ -1,0 +1,44 @@
+Overview
+Wood block stacking as step stair with arrow up
+marchmeena29 / iStock / Getty Images Plus / Getty Images
+
+Drive to the grocery store.              
+
+We have already discussed data validation for user input, so this week, we will explore ways that occasional bad input in larger data files can be addressed - the concept of data munging.
+
+Let us consider a few examples. In a data set where the data is supposed to represent the number of rooms in a house, if there are negative numbers in the set, something is certainly wrong. If the number of rooms is more than we expect for some reason, so say more than 20, we should be skeptical of that number - since these are supposed to be houses, not palaces. When we can state our limits so clearly, it is easy to write code that will detect such problems, and now we are left with the problem of what to do with this data. We should also take into consideration what our program is going to do with the data.
+
+Another example might be the number of cars in a household. Again, negative numbers are not ok, and over 10 seems a little much for a family.
+
+A more complicated example is one where we expect to see a first name in one field, a middle name in the second and a last name in the third field. Some people do not have middle names, so the program needs to make allowances for that possibility. It might be the case that a person entering the data into the data set might have reversed the first and last names: Austin, Jane rather than Jane Austen. A program might be able to get this recognized by using a list of common first and last names - but it is possible that the last name for someone might very well be Jane. And then there are names from other languages, such as many African and East Asian communities. And some people have many names, which we might think of as many middle names. And what about nick names and aliases?
+
+Some of the responses to bad data could be
+
+1.      ignore the data and do not use it in any of our program's work,
+
+2.      accept the data and do use it in the program,
+
+3.      replace the data with some value that seems reasonable,
+
+4.      report in some way that particular data items are out of range, or
+
+5.      request some kind of guidance from the user.
+
+The last can allow the user to fix the data item.
+
+A program might do any, or even all, of these actions. For example, accepting some data that is only a little out of range, but rejecting data that is far from a predefined valid range. We can certainly see why responding to bad input can make a simple program get complicated quickly!
+
+This Lab uses bar graphs to display some information in a data set. This is to help us see quickly if there are bad values in the data, and make it easier for humans to visualize the results of data set manipulations.
+
+Python provides a number of interesting ways to handle such data, and we will explore a few of them in this Lab. The notation can get strange, so it will be important to understand just all the characters in each Python statement actually say. A distinctive feature of Python is that a variable might refer to all kinds of different data types as a program goes along, so a very useful feature is to print the type of a variable as the program progresses. You will find that often you think a variable is referencing one TYPE of data, while a function is returning a different type. This can get quite confusing and often lead to errors that become hard to understand.
+
+Continue experimenting.
+
+There is nothing like the "aha moment," like when you figure out why a program is behaving in some unexpected way.
+
+Objectives
+After completing these activities, you should be able to do the following:
+
+Use the Python Pandas module for input from a csv file.
+Use Pandas for input validation and data munging.
+Use bandit to analyze code for security vulnerabilities.
